@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import Articles from "./components/Articles";
 import Article from "./components/Article";
 import Comments from "./components/Comments";
+import Topics from "./components/Topics";
+import TopicArticles from "./components/TopicArticles";
 import "./styles.css";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<Article />} />
         <Route path="/articles/:article_id/comments" element={<Comments />} />
+        <Route path="/topics" element={<Topics />} />
+        <Route path="/topics/:topic_slug" element={<TopicArticles />} />
       </Routes>
     </BrowserRouter>
   );

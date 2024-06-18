@@ -14,6 +14,10 @@ const CommentCard = ({ comment, setComments }) => {
     });
   }
 
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className="comment-card">
       <p>{comment.author}</p>

@@ -39,3 +39,9 @@ export const deleteComment = (comment_id) => {
     return res.data;
   });
 };
+
+export const getTopics = () => {
+  return AgoraApi.get("/topics").then((res) => {
+    return res.data;
+  });
+};
