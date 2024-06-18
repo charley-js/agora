@@ -33,8 +33,8 @@ const Comments = () => {
       setComments((comments) => [res, ...comments]);
       setNewComment("");
       setUsername("");
-      alert("Comment posted succesfully");
       setIsLoading(false);
+      alert("Comment posted succesfully");
     });
   }
 
@@ -75,7 +75,7 @@ const Comments = () => {
       {comments.length === 0 ? (
         <p>No Comments</p>
       ) : (
-        comments.map((comment) => <CommentCard key={comment.comment_id} comment={comment} />)
+        comments.map((comment) => <CommentCard key={comment.comment_id} comment={comment} setComments={setComments} />)
       )}
     </div>
   );

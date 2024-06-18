@@ -1,5 +1,18 @@
-const CommentCard = ({ comment }) => {
+import { deleteComment } from "../utils/api";
+import { useState } from "react";
+
+const CommentCard = ({ comment, setComments }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const date = new Date(comment.created_at).toLocaleDateString();
+
+  function handleClick() {
+    setIsLoading(true);
+    deleteComment(comment.comment_id).then(() => {
+      setIsLoading(false);
+      setComments((comments) => comments.filter((comm) => comm.comment_id !== comment.comment_id));
+      alert("Comment deleted");
+    });
+  }
 
   return (
     <div className="comment-card">
@@ -9,7 +22,7 @@ const CommentCard = ({ comment }) => {
       <p>
         Votes ({comment.votes}) <button>+</button>
       </p>
-      <button>Delete</button>
+      <button onClick={handleClick}>Delete</button>
     </div>
   );
 };
