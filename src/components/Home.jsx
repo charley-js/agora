@@ -1,7 +1,13 @@
+import FeaturedArticles from "./FeaturedArticles";
 import Hero from "./Hero";
 
 const Home = () => {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <FeaturedArticles />
+    </>
+  );
 };
 
 export default Home;
