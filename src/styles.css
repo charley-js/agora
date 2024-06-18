@@ -2,12 +2,11 @@
   border: 2px solid black;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   overflow-x: hidden;
+  background-color: aquamarine;
 }
 
 .header-title {
@@ -21,10 +20,7 @@
 
 .nav {
   border: 2px solid black;
-  margin-top: 10px;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   overflow-x: auto;
 }
 
@@ -45,16 +41,14 @@
   border: 2px solid black;
   text-align: center;
   padding: 20px;
-  width: 100%;
-  max-width: 1200px;
+  width: 50%;
   margin: 20px auto;
 }
 
 .articles-container {
   border: 2px solid black;
   padding: 20px;
-  width: 100%;
-  max-width: 1200px;
+  width: 80%;
   margin: 20px auto;
 }
 
