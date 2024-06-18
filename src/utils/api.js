@@ -27,3 +27,9 @@ export const voteArticle = (article_id) => {
     return res.data;
   });
 };
+
+export const postComment = (article_id, comment) => {
+  return AgoraApi.post(`/articles/${article_id}/comments`, comment).then((res) => {
+    return res.data;
+  });
+};
