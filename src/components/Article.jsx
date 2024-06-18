@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { getArticleById } from "../utils/api";
+import { getArticleById, voteArticle } from "../utils/api";
 import { useState, useEffect } from "react";
 
 const Article = () => {
@@ -18,6 +18,12 @@ const Article = () => {
     navigate(`/articles/${article_id}/comments`);
   }
 
+  function handleVote() {
+    voteArticle(article_id).then((res) => {
+      setArticle(res);
+    });
+  }
+
   return (
     <div>
       <ul className="article-card">
@@ -28,7 +34,7 @@ const Article = () => {
         <img src={article.article_img_url} alt={article.title}></img>
         <p>{article.body}</p>
         <p>Votes ({article.votes})</p>
-        <button>+</button>
+        <button onClick={handleVote}>+</button>
         <button onClick={handleClick}>View Comments</button>
       </ul>
     </div>
