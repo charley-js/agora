@@ -21,3 +21,9 @@ export const getComments = (article_id) => {
     return res.data;
   });
 };
+
+export const voteArticle = (article_id) => {
+  return AgoraApi.patch(`/articles/${article_id}`, { inc_votes: 1 }).then((res) => {
+    return res.data;
+  });
+};
