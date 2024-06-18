@@ -5,12 +5,15 @@ import { useState, useEffect } from "react";
 const Article = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const date = new Date(article.created_at).toLocaleDateString();
   const navigate = useNavigate();
 
   useEffect(() => {
+    setIsLoading(true);
     getArticleById(article_id).then((res) => {
       setArticle(res);
+      setIsLoading(false);
     });
   }, [article_id]);
 
@@ -24,17 +27,22 @@ const Article = () => {
     });
   }
 
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div>
       <ul className="article-card">
-        <p>{article.topic}</p>
+        <p>Topic: {article.topic}</p>
         <p>{date}</p>
         <h3>{article.title}</h3>
-        <p>{article.author}</p>
+        <p>Created by {article.author}</p>
         <img src={article.article_img_url} alt={article.title}></img>
         <p>{article.body}</p>
-        <p>Votes ({article.votes})</p>
-        <button onClick={handleVote}>+</button>
+        <p>
+          Votes ({article.votes}) <button onClick={handleVote}>+</button>
+        </p>
         <button onClick={handleClick}>View Comments</button>
       </ul>
     </div>
