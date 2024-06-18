@@ -66,3 +66,7 @@
 img {
   width: 80%;
 }
+
+.comment-card {
+  border: 2px solid black;
+}
