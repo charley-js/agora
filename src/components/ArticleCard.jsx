@@ -9,11 +9,11 @@ const ArticleCard = ({ article }) => {
   }
   return (
     <>
-      <ul className="article-card">
-        <p>{article.topic}</p>
+      <ul key={article.article_id} className="article-card">
+        <p>Topic: {article.topic}</p>
         <p>{date}</p>
         <h3>{article.title}</h3>
-        <p>{article.author}</p>
+        <p>Created by {article.author}</p>
         <img src={article.article_img_url} alt={article.title}></img>
         <p>Votes ({article.votes})</p>
         <p>Comments ({article.comment_count})</p>
