@@ -10,7 +10,9 @@ const Nav = () => {
         <li>
           <Link to="/articles">Articles</Link>
         </li>
-        <li>Topics</li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
         <li>Users</li>
       </ul>
     </nav>
