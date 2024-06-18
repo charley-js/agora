@@ -33,3 +33,9 @@ export const postComment = (article_id, comment) => {
     return res.data;
   });
 };
+
+export const deleteComment = (comment_id) => {
+  return AgoraApi.delete(`/comments/${comment_id}`).then((res) => {
+    return res.data;
+  });
+};
