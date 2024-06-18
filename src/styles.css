@@ -70,3 +70,11 @@ img {
 .comment-card {
   border: 2px solid black;
 }
+
+.new-comment {
+  border: 2px solid black;
+}
+
+.new-comment input {
+  display: block;
+}
