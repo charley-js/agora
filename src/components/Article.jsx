@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getArticleById } from "../utils/api";
 import { useState, useEffect } from "react";
 
@@ -6,12 +6,17 @@ const Article = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const date = new Date(article.created_at).toLocaleDateString();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getArticleById(article_id).then((res) => {
       setArticle(res);
     });
   }, [article_id]);
+
+  function handleClick() {
+    navigate(`/articles/${article_id}/comments`);
+  }
 
   return (
     <div>
@@ -24,7 +29,7 @@ const Article = () => {
         <p>{article.body}</p>
         <p>Votes ({article.votes})</p>
         <button>+</button>
-        <button>View Comments</button>
+        <button onClick={handleClick}>View Comments</button>
       </ul>
     </div>
   );
