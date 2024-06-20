@@ -7,18 +7,38 @@ const TopicArticles = () => {
   const { topic_slug } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [articles, setArticles] = useState([]);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [errorCode, setErrorCode] = useState(0);
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles().then((res) => {
-      const topicArticles = res.filter((article) => article.topic === topic_slug);
-      setArticles(topicArticles);
-      setIsLoading(false);
-    });
+    getArticles()
+      .then((res) => {
+        const topicArticles = res.filter((article) => article.topic === topic_slug);
+        if (topicArticles.length === 0) {
+          setErrorMsg("Invalid topic");
+          setErrorCode(404);
+        }
+        setArticles(topicArticles);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setErrorMsg(err.response.data.msg);
+        setErrorCode(err.response.status);
+      });
   }, [topic_slug]);
 
   if (isLoading) {
     return <p>Loading...</p>;
+  }
+
+  if (errorMsg || errorCode) {
+    return (
+      <p>
+        {errorCode} : {errorMsg}
+      </p>
+    );
   }
 
   return (
