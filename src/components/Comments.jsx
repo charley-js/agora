@@ -28,14 +28,22 @@ const Comments = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (!username || !newComment) {
+      alert("Missing username/comment");
+    }
     setIsLoading(true);
-    postComment(article_id, { username, body: newComment }).then((res) => {
-      setComments((comments) => [res, ...comments]);
-      setNewComment("");
-      setUsername("");
-      setIsLoading(false);
-      alert("Comment posted succesfully");
-    });
+    postComment(article_id, { username, body: newComment })
+      .then((res) => {
+        setComments((comments) => [res, ...comments]);
+        setNewComment("");
+        setUsername("");
+        setIsLoading(false);
+        alert("Comment posted succesfully");
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        alert("Invalid username");
+      });
   }
 
   if (isLoading) {

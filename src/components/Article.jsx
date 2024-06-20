@@ -6,15 +6,23 @@ const Article = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [errorCode, setErrorCode] = useState(0);
   const date = new Date(article.created_at).toLocaleDateString();
   const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoading(true);
-    getArticleById(article_id).then((res) => {
-      setArticle(res);
-      setIsLoading(false);
-    });
+    getArticleById(article_id)
+      .then((res) => {
+        setArticle(res);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setErrorMsg(err.response.data.msg);
+        setErrorCode(err.response.status);
+      });
   }, [article_id]);
 
   function handleClick() {
@@ -29,6 +37,14 @@ const Article = () => {
 
   if (isLoading) {
     return <p>Loading...</p>;
+  }
+
+  if (errorMsg || errorCode) {
+    return (
+      <p>
+        {errorCode} : {errorMsg}
+      </p>
+    );
   }
 
   return (
