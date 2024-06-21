@@ -11,6 +11,14 @@ const Article = () => {
   const date = new Date(article.created_at).toLocaleDateString();
   const navigate = useNavigate();
 
+  const style = {
+    color: "#f50057",
+  };
+
+  const pStyle = {
+    "text-align": "center",
+  };
+
   useEffect(() => {
     setIsLoading(true);
     getArticleById(article_id)
@@ -50,14 +58,19 @@ const Article = () => {
   return (
     <div>
       <ul className="article-card">
-        <p>Topic: {article.topic}</p>
-        <p>{date}</p>
+        <p className="topic-text">{article.topic}</p>
+        <p className="date-text">{date}</p>
         <h3>{article.title}</h3>
-        <p>Created by {article.author}</p>
+        <p style={style}>Created by {article.author}</p>
         <img src={article.article_img_url} alt={article.title}></img>
-        <p>{article.body}</p>
+        <p style={pStyle}>{article.body}</p>
         <p>
-          Votes ({article.votes}) <button onClick={handleVote}>+</button>
+          <span>
+            Votes ({article.votes}){" "}
+            <button className="votes-button" onClick={handleVote}>
+              +
+            </button>
+          </span>
         </p>
         <button onClick={handleClick}>View Comments</button>
       </ul>

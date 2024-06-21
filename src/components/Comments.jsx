@@ -26,6 +26,10 @@ const Comments = () => {
 
   const date = new Date(article.created_at).toLocaleDateString();
 
+  const style = {
+    color: "#009688",
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
     if (!username || !newComment) {
@@ -47,17 +51,18 @@ const Comments = () => {
   }
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (
-    <div>
-      <ul className="article-card">
-        <p>Topic: {article.topic}</p>
-        <p>{date}</p>
-        <h3>{article.title}</h3>
-        <p>Created by {article.author}</p>
-      </ul>
+    <div className="comment-article">
+      <div className="article-details">
+        <p className="topic-text">{article.topic}</p>
+        <p className="date-text">{date}</p>
+        <h3 style={style}>{article.title}</h3>
+        <p className="author-text">Created by {article.author}</p>
+      </div>
+
       <form className="new-comment" onSubmit={handleSubmit}>
         <label htmlFor="username"></label>
         <input

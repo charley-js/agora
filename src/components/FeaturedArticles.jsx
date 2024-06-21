@@ -20,11 +20,11 @@ const FeaturedArticles = () => {
   }
 
   return (
-    <>
+    <div className="feat-articles-container">
       {featuredArticles.map((article) => (
         <ArticleCard key={article.article_id} article={article} />
       ))}
-    </>
+    </div>
   );
 };
 

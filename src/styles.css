@@ -1,27 +1,53 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  max-width: 1881px;
+  background-color: #333;
+}
+
 .header-container {
-  border: 2px solid black;
-  padding: 10px;
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  overflow-x: hidden;
-  background-color: aquamarine;
+  background: linear-gradient(to right, #33ab9f, #4ebaaa);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .header-title {
   text-align: center;
   margin: 0;
+  font-size: 24px;
 }
 
-.login-button {
-  height: 40px;
+.login-container {
+  margin-left: auto;
+}
+
+.login-button,
+button {
+  padding: 10px 20px;
+  background-color: #f50057;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+button:hover {
+  background-color: #ab003c;
 }
 
 .nav {
-  border: 2px solid black;
   width: 100%;
   overflow-x: auto;
+  margin-top: 20px;
 }
 
 .nav ul {
@@ -29,52 +55,300 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 20px;
+  gap: 75px;
   justify-content: center;
+  font-size: 18px;
 }
 
 .nav li {
   margin-bottom: 10px;
 }
 
+.nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #f50057;
+}
+
+.logo {
+  height: 50px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .hero {
-  border: 2px solid black;
   text-align: center;
-  padding: 20px;
-  width: 50%;
-  margin: 20px auto;
+  padding: 40px 20px;
+  width: 60%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to right, #33ab9f, #4ebaaa);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-header {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.topic-header {
+  text-align: center;
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.hero-button {
+  padding: 15px 30px;
+  background-color: #f50057;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #ab003c;
 }
 
 .articles-container {
-  border: 2px solid black;
   padding: 20px;
   width: 80%;
   margin: 20px auto;
 }
 
+.articles-header {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.feat-articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
 .article-card {
-  border: 2px solid black;
-  text-align: center;
-  padding: 10px;
+  flex: 1 1 calc(33.333% - 40px);
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.articles-header,
-.hero-header {
-  text-align: center;
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-img {
+.article-card img {
+  width: 50%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.article-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #009688;
+}
+
+.author-text {
+  color: #f50057;
+}
+
+.article-card p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.topic-text {
+  font-style: italic;
+  color: #333;
+}
+
+.date-text {
+  font-weight: bold;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.article-title {
+  color: #009688;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.topic-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.topic-list ul {
+  list-style-type: none;
+  padding: 15px 20px;
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 80%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-list ul:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.topic-list h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #007bff;
+}
+
+.topic-list h3 a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.topic-list h3 a:hover {
+  color: #0056b3;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 18px;
+  color: #333;
 }
 
 .comment-card {
-  border: 2px solid black;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 15px auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-card p {
+  margin: 5px 0;
+}
+
+.comment-card .votes-button {
+  margin-top: 10px;
+}
+
+.comment-article {
+  text-align: center;
+}
+.comment-card button {
+  margin-top: 10px;
+  background-color: #f50057;
+  transition: background-color 0.3s ease;
+}
+
+.comment-card button:hover {
+  background-color: #ab003c;
 }
 
 .new-comment {
-  border: 2px solid black;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.votes-button {
+  border-radius: 100px;
+  background-color: #f50057;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  padding: 5px 10px;
 }
 
 .new-comment input {
   display: block;
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.topic-list {
+  text-align: center;
+}
+
+.new-comment input::placeholder {
+  color: #bbb;
+}
+
+.new-comment button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.article-details {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.article-details p,
+.article-details h3 {
+  margin: 5px 0;
 }

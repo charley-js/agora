@@ -3,8 +3,10 @@ import TopicList from "./TopicList";
 const Topics = () => {
   return (
     <>
-      <h2>Topics</h2>
-      <TopicList />
+      <h2 className="topic-header">Topics</h2>
+      <div className="topic-list">
+        <TopicList />
+      </div>
     </>
   );
 };
