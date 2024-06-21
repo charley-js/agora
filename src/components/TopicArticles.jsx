@@ -30,20 +30,20 @@ const TopicArticles = () => {
   }, [topic_slug]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   if (errorMsg || errorCode) {
     return (
-      <p>
+      <p className="error">
         {errorCode} : {errorMsg}
       </p>
     );
   }
 
   return (
-    <div>
-      <h2>Articles on {topic_slug}</h2>
+    <div className="articles-container">
+      <h2 className="articles-header">Articles on {topic_slug}</h2>
       {articles.map((article) => (
         <ArticleCard article={article} key={article.article_id} />
       ))}

@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 const TopicList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [topics, setTopics] = useState([]);
+
+  const style = {
+    color: "#f50057",
+  };
   useEffect(() => {
     setIsLoading(true);
     getTopics().then((res) => {
@@ -14,20 +18,22 @@ const TopicList = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (
-    <>
+    <div className="topic-list">
       {topics.map((topic) => (
         <ul key={topic.slug}>
           <h3>
-            <Link to={`/topics/${topic.slug}`}>{topic.slug}</Link>
+            <Link style={style} to={`/topics/${topic.slug}`}>
+              {topic.slug}
+            </Link>
           </h3>
           <p>{topic.description}</p>
         </ul>
       ))}
-    </>
+    </div>
   );
 };
 

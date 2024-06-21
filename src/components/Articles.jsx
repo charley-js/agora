@@ -20,6 +20,7 @@ const Articles = () => {
   return (
     <div className="articles-container">
       <h2 className="articles-header">Articles</h2>
+
       {articles.map((article) => (
         <ArticleCard key={article.article_id} article={article} />
       ))}
