@@ -27,7 +27,7 @@ const TopicList = () => {
         <ul key={topic.slug}>
           <h3>
             <Link style={style} to={`/topics/${topic.slug}`}>
-              {topic.slug}
+              #{topic.slug}
             </Link>
           </h3>
           <p>{topic.description}</p>

@@ -6,14 +6,13 @@ const Header = () => {
     <header>
       <div className="header-container">
         <div className="logo-container">
-          <img src={Logo} alt="Logo" className="logo" />
           <h1 className="header-title">Agora</h1>
         </div>
+        <Nav />
         <div className="login-container">
           <button className="login-button">Login</button>
         </div>
       </div>
-      <Nav />
     </header>
   );
 };

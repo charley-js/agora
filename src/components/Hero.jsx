@@ -7,10 +7,10 @@ const Hero = () => {
   }
   return (
     <div className="hero">
-      <h2 className="hero-header">Welcome to Agora</h2>
+      <h2 className="hero-header">Discover Agora</h2>
       <p className="hero-text">
-        The gathering place for isnightful articles and engaging content. Discover knoweldge, join a community and
-        simply explore!
+        The gathering place where insightful articles and engaging content meet curious minds. Dive into knoweldge, join
+        a community and discover a space for exploration and growth!
       </p>
       <button className="hero-button" onClick={handleClick}>
         View all articles

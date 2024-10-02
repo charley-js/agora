@@ -14,19 +14,20 @@ const ArticleCard = ({ article }) => {
   return (
     <>
       <ul key={article.article_id} className="article-card">
-        <p className="topic-text">{article.topic}</p>
-        <p className="date-text">{date}</p>
+        <p className="topic-text">#{article.topic}</p>
         <h3 className="article-title">{article.title}</h3>
-        <p className="author-text" style={style}>
-          Created by {article.author}
+        <p className="author-date-text" style={style}>
+          Created by {article.author} • {date}
         </p>
-        <img src={article.article_img_url} alt={article.title}></img>
-        <p>
-          Votes <span style={style}>({article.votes}) </span>
-        </p>
-        <p>
-          Comments <span style={style}>({article.comment_count}) </span>
-        </p>
+        <img className="article-image" src={article.article_img_url} alt={article.title}></img>
+        <div className="article-votes-comments">
+          <p>
+            Votes <span style={style}>({article.votes}) </span>
+          </p>
+          <p>
+            Comments <span style={style}>({article.comment_count}) </span>
+          </p>
+        </div>
         <button onClick={handleClick}>Read</button>
       </ul>
     </>
