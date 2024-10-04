@@ -384,3 +384,95 @@ button:hover {
   font-family: "Cabin Sketch";
   font-size: 50px;
 }
+
+/* UserCard container */
+.user-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  justify-content: center;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-10px);
+}
+
+.user-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f50057;
+}
+
+.user-realname {
+  font-size: 16px;
+  font-weight: 400;
+  color: #777;
+  font-style: italic;
+  margin-top: -10px;
+}
+
+.users-header {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Cabin Sketch", cursive;
+  color: #ffffff;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.article-view {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.article-card2 {
+  background-color: white;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.article-card2 img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topic-text2 {
+  font-style: italic;
+  color: #f50057;
+  font-size: 16px;
+  margin-bottom: -15px;
+}
+
+.author-text {
+  color: #f50057;
+}

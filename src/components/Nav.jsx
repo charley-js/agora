@@ -14,7 +14,9 @@ const Nav = () => {
           <li>
             <Link to="/topics">Topics</Link>
           </li>
-          <li>Users</li>
+          <li>
+            <Link to="/users">Users</Link>
+          </li>
         </ul>
       </nav>
     </div>

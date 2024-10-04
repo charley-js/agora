@@ -45,3 +45,9 @@ export const getTopics = () => {
     return res.data;
   });
 };
+
+export const getUsers = () => {
+  return AgoraApi.get("/users").then((res) => {
+    return res.data;
+  });
+};

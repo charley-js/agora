@@ -56,12 +56,13 @@ const Article = () => {
   }
 
   return (
-    <div>
-      <ul className="article-card">
-        <p className="topic-text">{article.topic}</p>
-        <p className="date-text">{date}</p>
-        <h3>{article.title}</h3>
-        <p style={style}>Created by {article.author}</p>
+    <div className="article-view">
+      <ul className="article-card2">
+        <p className="topic-text2">#{article.topic}</p>
+        <h3 className="article-title">{article.title}</h3>
+        <p className="author-date-text">
+          Created by {article.author} • {date}
+        </p>
         <img src={article.article_img_url} alt={article.title}></img>
         <p style={pStyle}>{article.body}</p>
         <p>

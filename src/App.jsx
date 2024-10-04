@@ -8,6 +8,7 @@ import Comments from "./components/Comments";
 import Topics from "./components/Topics";
 import TopicArticles from "./components/TopicArticles";
 import NotFound from "./components/NotFound";
+import Users from "./components/Users";
 import "./styles.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/articles/:article_id/comments" element={<Comments />} />
         <Route path="/topics" element={<Topics />} />
         <Route path="/topics/:topic_slug" element={<TopicArticles />} />
+        <Route path="/users" element={<Users />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

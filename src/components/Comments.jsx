@@ -57,10 +57,11 @@ const Comments = () => {
   return (
     <div className="comment-article">
       <div className="article-details">
-        <p className="topic-text">{article.topic}</p>
-        <p className="date-text">{date}</p>
+        <p className="topic-text2">{article.topic}</p>
         <h3 style={style}>{article.title}</h3>
-        <p className="author-text">Created by {article.author}</p>
+        <p className="author-text">
+          Created by {article.author} • {date}{" "}
+        </p>
       </div>
 
       <form className="new-comment" onSubmit={handleSubmit}>
