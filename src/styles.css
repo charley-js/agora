@@ -476,3 +476,44 @@ ul {
 .author-text {
   color: #f50057;
 }
+
+.footer {
+  background-color: #050505;
+  padding: 20px 0;
+  color: #f50057;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-icon {
+  margin: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.1);
+}
+
+.copyright-text {
+  font-size: 14px;
+  margin-top: 15px;
+  color: #f50057;
+}

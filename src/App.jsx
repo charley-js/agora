@@ -9,6 +9,7 @@ import Topics from "./components/Topics";
 import TopicArticles from "./components/TopicArticles";
 import NotFound from "./components/NotFound";
 import Users from "./components/Users";
+import Footer from "./components/Footer";
 import "./styles.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
